@@ -41,7 +41,7 @@ foreach ($kanto as $Y) {
 
 // Q8 連想配列-2      
 foreach ($kanto as $x=>$y) {
-    if ($x=='埼玉県') {
+    if ($x==='埼玉県') {
         echo $x.'の県庁所在地は、'.$y.'です。'."\n";
     }
 }
