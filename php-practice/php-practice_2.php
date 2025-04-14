@@ -105,7 +105,14 @@ $yamada->attend('PHP');
 
 // Q5 定義済みクラス
 //問題１
-
+$date=new Datetime();
+$date->modify('-1 month');
+echo $date->format('Y-m-d')."\n";
 
 //問題２
+$dt=new Datetime();
+$datetime=new Datetime('1992-4-25');
+$interval=$datetime->diff($dt);
+echo 'あの日から'.$interval->format('%a').'日経過しました。';
+
 ?>
