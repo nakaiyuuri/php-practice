@@ -37,14 +37,14 @@ $personalInfos = [
 echo $personalInfos[1]['name'] . 'の電話番号は' . $personalInfos[1]['tel'] . 'です。' . "\n";
 
 //問題２
-foreach ($personalInfos as $X => $Y) {
-    echo 1 + $X . '番目の' . $Y['name'] . 'のメールアドレスは' . $Y['mail'] . 'で、電話番号は' . $Y['tel'] . 'です。' . "\n";
+foreach ($personalInfos as $number => $content) {
+    echo 1 + $number . '番目の' . $content['name'] . 'のメールアドレスは' . $content['mail'] . 'で、電話番号は' . $content['tel'] . 'です。' . "\n";
 }
 
 //問題３
 $ageList=[25,30,18];
-foreach ($personalInfos as $X => $Y) {
-    $personalInfos[$X]['age'] = $ageList[$X];
+foreach ($personalInfos as $number => $content) {
+    $personalInfos[$number]['age'] = $ageList[$number];
 }
 
 var_dump($personalInfos);
