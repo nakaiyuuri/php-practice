@@ -1,15 +1,15 @@
 <?php
 // Q1 tic-tac問題
-echo '1から100までのカウントを開始します'."\n\n";
-for ($i=1;$i<=100;$i++) {
-    if ($i%4===0 && $i%5===0) {
-        echo 'tic-tac'."\n";
-    } elseif ($i%4===0) {
-        echo 'tic'."\n";
-    } elseif ($i%5===0) {
-        echo 'tac'."\n";
+echo '1から100までのカウントを開始します' . "\n\n";
+for ($i = 1; $i <= 100; $i ++) {
+    if ($i % 4 === 0 && $i % 5 === 0) {
+        echo 'tic-tac' . "\n";
+    } elseif ($i % 4 === 0) {
+        echo 'tic' . "\n";
+    } elseif ($i % 5 === 0) {
+        echo 'tac' . "\n";
     } else {
-        echo $i."\n";
+        echo $i . "\n";
     }
 }
 
@@ -38,13 +38,13 @@ echo $personalInfos[1]['name'].'の電話番号は'.$personalInfos[1]['tel'].'�
 
 //問題２
 foreach ($personalInfos as $X => $Y) {
-    echo 1+$X.'番目の'.$Y['name'].'のメールアドレスは'.$Y['mail'].'で、電話番号は'.$Y['tel'].'です。'."\n";
+    echo 1 + $X . '番目の' . $Y['name'] . 'のメールアドレスは' . $Y['mail'] . 'で、電話番号は' . $Y['tel'] . 'です。' . "\n";
 }
 
 //問題３
 $ageList=[25,30,18];
 foreach ($personalInfos as $X => $Y) {
-    $personalInfos[$X]['age']=$ageList[$X];
+    $personalInfos[$X]['age'] = $ageList[$X];
 }
 
 var_dump($personalInfos);
@@ -63,7 +63,7 @@ class Student
     
     public function IdName()
     {
-        echo '学籍番号'.$this->studentId.'番の生徒は'.$this->studentName.'です。'."\n";
+        echo '学籍番号' . $this->studentId . '番の生徒は' . $this->studentName . 'です。' . "\n";
     }
 
     public function attend()
@@ -72,8 +72,12 @@ class Student
     }
 }
 
-$yamada=new Student(120, '山田');
+$yamada = new Student(120, '山田');
 $yamada->IdName();
+
+//Q3 メソッドを定義しない場合
+$yamada = new Student(120, '山田');
+echo '学籍番号' . $yamada->studentId . '番の生徒は' . $yamada->studentName . 'です。';
 
 // Q4 オブジェクト-2(attend()の書き換え)
 class Student
@@ -89,30 +93,28 @@ class Student
     
     public function IdName()
     {
-        echo '学籍番号'.$this->studentId.'番の生徒は'.$this->studentName.'です。'."\n";
+        echo '学籍番号' . $this->studentId . '番の生徒は' . $this->studentName . 'です。' . "\n";
     }
 
     public function attend($class)
     {
-        echo $this->studentName.'は'.$class.'の授業に参加しました。学籍番号：'.$this->studentId."\n";
+        echo $this->studentName . 'は' . $class . 'の授業に参加しました。学籍番号：' . $this->studentId . "\n";
     }
 }
 
-$yamada=new Student(120, '山田');
+$yamada = new Student(120, '山田');
 $yamada->IdName();
 $yamada->attend('PHP');
 
 
 // Q5 定義済みクラス
 //問題１
-$date=new Datetime();
+$date = new Datetime();
 $date->modify('-1 month');
-echo $date->format('Y-m-d')."\n";
+echo $date->format('Y-m-d') . "\n";
 
 //問題２
-$dt=new Datetime();
-$datetime=new Datetime('1992-4-25');
-$interval=$datetime->diff($dt);
-echo 'あの日から'.$interval->format('%a').'日経過しました。';
-
-?>
+$today = new Datetime();
+$pastDay = new Datetime('1992-4-25');
+$interval = $pastDay->diff($today);
+echo 'あの日から' . $interval->format('%a') . '日経過しました。';
