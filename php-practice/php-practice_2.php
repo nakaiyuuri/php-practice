@@ -42,7 +42,7 @@ foreach ($personalInfos as $number => $content) {
 }
 
 //問題３
-$ageList=[25,30,18];
+$ageList = [25,30,18];
 foreach ($personalInfos as $number => $content) {
     $personalInfos[$number]['age'] = $ageList[$number];
 }
